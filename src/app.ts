@@ -1,7 +1,4 @@
 import express, { Request, Response } from "express";
-import "dotenv/config";
-
-import "./app/config/passport";
 const app = express();
 
 app.use(express.json());
