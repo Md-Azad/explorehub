@@ -8,10 +8,10 @@ const createUser = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const result = await userServices.createUser(req.body);
 
-    res.send({
+    res.status(201).send({
       success: true,
       statusCode: 201,
-      message: " users Created successfully",
+      message: "Users created successfully",
       data: result,
     });
   },

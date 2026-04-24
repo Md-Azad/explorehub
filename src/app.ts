@@ -7,5 +7,11 @@ app.use("/api/v1", router);
 app.get("/", (req: Request, res: Response) => {
   res.status(200).send({ message: "Server is running for explorehub." });
 });
+app.get("/healthz", (req: Request, res: Response) => {
+  res.status(200).send({
+    message: "Server is healthy",
+    status: true,
+  });
+});
 
 export default app;
