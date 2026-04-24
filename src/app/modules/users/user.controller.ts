@@ -1,17 +1,17 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 
 import { userServices } from "./user.service";
 import { catchAsync } from "../../utils/catchAsync";
 
 const createUser = catchAsync(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async (req: Request, res: Response, next: NextFunction) => {
+  async (req: Request, res: Response) => {
     const result = await userServices.createUser(req.body);
 
-    res.send({
+    res.status(201).send({
       success: true,
       statusCode: 201,
-      message: " users Created successfully",
+      message: "Users created successfully",
       data: result,
     });
   },
