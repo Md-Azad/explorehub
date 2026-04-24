@@ -1,7 +1,7 @@
 import { User } from "../user.model";
 import { userServices } from "../user.service";
 
-jest.mock("./user.model", () => ({
+jest.mock("../user.model", () => ({
   User: {
     findOne: jest.fn(),
     create: jest.fn(),
